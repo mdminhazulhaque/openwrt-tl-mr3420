@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# WiFI Toggle Script
+
+device="radio0"
+
+case $(uci get wireless.$device.disabled) in
+    0)
+        wifi down $device
+        uci set wireless.$device.disabled=1
+        echo "Wifi disabled"
+    ;;
+    1)
+        uci set wireless.$device.disabled=0
+        wifi up $device
+        echo "Wifi enabled"
+    ;;
+esac

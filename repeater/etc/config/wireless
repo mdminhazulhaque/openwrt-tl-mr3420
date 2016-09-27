@@ -1,0 +1,26 @@
+config wifi-device 'radio0'
+    option type 'mac80211'
+    option channel '11'
+    option hwmode '802.11n'
+    option path 'platform/ar934x_wmac'
+    option htmode 'HT40-' # 300MB/s
+    option txpower '30'
+    option country 'BD'
+    option noscan '1'
+
+config wifi-iface
+    option device 'radio0'
+    option network 'wwan'
+    option encryption 'psk2'
+    option key '12345678'
+    option mode 'sta'
+    option ssid 'source_ssid'
+
+config wifi-iface
+    option device 'radio0'
+    option network 'lan'
+    option encryption 'psk2'
+    option key '12345678'
+    option mode 'ap'
+    option ssid 'repeater_ssid'
+

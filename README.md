@@ -30,4 +30,4 @@ Configure USB modems using `uci` ...
     uci set network.wan.ifname=eth2 # eth2/usb0 or whatever
     uci set network.wan.mtu='1400'
     uci commit
-    
+    /etc/init.d/network reload

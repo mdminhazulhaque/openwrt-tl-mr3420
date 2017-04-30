@@ -4,8 +4,15 @@ Follow [obtain.firmware.generate](http://wiki.openwrt.org/doc/howto/obtain.firmw
 
 Built using the following `make` command.
 
-    make image PROFILE=TLMR3420 PACKAGES="kmod-usb-net kmod-usb-net-rndis kmod-usb-net-cdc-ether usbutils udev nano -kmod-ipv6"
+```bash
+make image PROFILE=TLMR3420 PACKAGES="kmod-usb-net kmod-usb-net-rndis kmod-usb-net-cdc-ether usbutils udev nano -kmod-ipv6"
+```
 
+A version with MQTT broker and other handy utilities can be built with the following command.
+
+```bash
+make image PROFILE=TLMR3420 PACKAGES="-kmod-ipv6 nano mosquitto kmod-usb-storage vsftpd unzip lua lua-mosquitto lua-cjson mosquitto-client kmod-fs-vfat kmod-fs-ntfs kmod-fs-ext4 uhttpd-mod-lua"
+```
 
 ## Features
 
